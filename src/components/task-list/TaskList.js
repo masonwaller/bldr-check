@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TaskCard from "./TaskCard";
 import AddTaskModal from "../modal/AddTaskModal";
 
 export default function TaskList() {
-  const [tasks, setTasks] = React.useState([
+  const [tasks, setTasks] = useState([
     { id: 1, name: "Task 1", description: "123" },
   ]);
-  const [showModal, setShowModal] = React.useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  const webSocket = new WebSocket("wss://http://localhost:3000/");
+  const websocket = new WebSocket("ws://localhost:3000");
+  websocket.onopen = () => {
+    console.log("WebSocket Client Connected");
+  };
+  websocket.onmessage = (message) => {
+    setTasks(JSON.parse(message.data));
+  };
 
   const addTask = (name, description) => {
     const newTask = {
@@ -18,6 +24,8 @@ export default function TaskList() {
       complete: false,
     };
     setTasks([...tasks, newTask]);
+    //commented out for it to work
+    // webSocket.send(JSON.stringify([...tasks, newTask]));
     setShowModal(false);
   };
 
