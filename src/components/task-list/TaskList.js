@@ -39,11 +39,15 @@ export default function TaskList() {
       return task;
     });
     setTasks(newTasks);
+    let data = JSON.stringify(newTasks);
+    websocket.send(data);
   };
 
   const deleteTask = (id) => {
     const newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
+    let data = JSON.stringify(newTasks);
+    websocket.send(data);
   };
 
   return (
