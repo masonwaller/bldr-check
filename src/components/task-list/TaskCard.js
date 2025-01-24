@@ -8,6 +8,7 @@ export default function TaskCard({ task }) {
       <input type="checkbox" checked={task.complete} />
       <span>Complete</span>
       <button>Delete</button>
+      <p>weird</p>
     </li>
   );
 }
