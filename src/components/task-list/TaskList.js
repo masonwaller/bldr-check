@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TaskCard from "./TaskCard";
 import AddTaskModal from "../modal/AddTaskModal";
+import { blobToArray } from "./helper";
 
 export default function TaskList() {
   const [tasks, setTasks] = useState([
@@ -8,12 +9,12 @@ export default function TaskList() {
   ]);
   const [showModal, setShowModal] = useState(false);
 
-  const websocket = new WebSocket("ws://localhost:3000");
+  const websocket = new WebSocket("ws://localhost:8080");
   websocket.onopen = () => {
     console.log("WebSocket Client Connected");
   };
-  websocket.onmessage = (message) => {
-    setTasks(JSON.parse(message.data));
+  websocket.onmessage = async ({ data }) => {
+    setTasks(await blobToArray(data));
   };
 
   const addTask = (name, description) => {
@@ -23,9 +24,10 @@ export default function TaskList() {
       description,
       complete: false,
     };
-    setTasks([...tasks, newTask]);
-    //commented out for it to work
-    // webSocket.send(JSON.stringify([...tasks, newTask]));
+    let newArray = [...tasks, newTask];
+    setTasks(newArray);
+    let data = JSON.stringify(newArray);
+    websocket.send(data);
     setShowModal(false);
   };
 
