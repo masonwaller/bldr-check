@@ -3,7 +3,7 @@ import TaskList from "./components/task-list/TaskList";
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <TaskList />
     </div>
   );

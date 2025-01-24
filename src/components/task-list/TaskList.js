@@ -7,13 +7,18 @@ export default function TaskList() {
   ]);
 
   return (
-    <div>
-      <h1>Task List</h1>
-      <ul style={{ listStyleType: "none" }}>
+    <div style={{ margin: "10px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h1>Task List</h1>
+        <button style={{ padding: "5px", alignSelf: "center" }}>
+          Add Task
+        </button>
+      </div>
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
         {tasks.map((task) => (
           <TaskCard task={task} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
