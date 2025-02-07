@@ -1,4 +1,4 @@
-Simple task manager list. This allows you to add tasks to a list as well as delete and complete them. It uses websockets
+Simple task manager list. This allows you to add tasks to a list as well as delete and complete them, hopefully help users stay organized. It uses websockets
 to keep lists the same on different browser windows.
 
 Start by `npm i` and then in a new terminal navigate down to the `server` folder and also `npm i` there.
