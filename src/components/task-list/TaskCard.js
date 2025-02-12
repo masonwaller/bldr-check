@@ -1,18 +1,9 @@
 import React from "react";
+import "./TaskCard.css";
 
 export default function TaskCard({ task, completeTask, deleteTask }) {
   return (
-    <li
-      key={task.id}
-      style={{
-        listStyleType: "none",
-        border: "2px solid black",
-        width: "200px",
-        padding: "10px",
-        backgroundColor: "lightgray",
-        margin: "0 5px 5px 0",
-      }}
-    >
+    <li key={task.id} className="task-card">
       <h3>{task.name}</h3>
       <p>{task.description}</p>
       <input

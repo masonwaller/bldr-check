@@ -1,0 +1,8 @@
+.task-card {
+  list-style-type: none;
+  border: 2px solid black;
+  width: 200px;
+  padding: 10px;
+  background-color: lightgray;
+  margin: 0 5px 5px 0;
+}
