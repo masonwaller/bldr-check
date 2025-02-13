@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TaskCard from "./TaskCard";
 import AddTaskModal from "../modal/AddTaskModal";
 import { blobToArray } from "./helper";
+import "./TaskList.css";
 
 export default function TaskList() {
   const [tasks, setTasks] = useState([
@@ -55,16 +56,13 @@ export default function TaskList() {
       {showModal && (
         <AddTaskModal addTask={addTask} close={() => setShowModal(false)} />
       )}
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div className="list-header">
         <h1>Task List</h1>
-        <button
-          style={{ padding: "5px", alignSelf: "center" }}
-          onClick={() => setShowModal(true)}
-        >
+        <button className="add-btn" onClick={() => setShowModal(true)}>
           Add Task
         </button>
       </div>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <div className="list-body">
         {tasks.map((task) => (
           <TaskCard
             task={task}

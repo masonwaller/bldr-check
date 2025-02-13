@@ -1,0 +1,14 @@
+.list-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.add-btn {
+  padding: 5px;
+  align-self: center;
+}
