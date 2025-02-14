@@ -1,4 +1,5 @@
 import React from "react";
+import "./AddTaskModal.css";
 
 export default function AddTaskModal(props) {
   const [name, setName] = React.useState("");
@@ -14,6 +15,7 @@ export default function AddTaskModal(props) {
         reight: 0,
         position: "absolute",
       }}
+      className="modal-container"
     >
       <h1>Add Task</h1>
       <div>

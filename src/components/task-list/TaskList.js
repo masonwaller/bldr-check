@@ -52,7 +52,7 @@ export default function TaskList() {
   };
 
   return (
-    <div style={{ margin: "10px" }}>
+    <div className="list-container">
       {showModal && (
         <AddTaskModal addTask={addTask} close={() => setShowModal(false)} />
       )}
