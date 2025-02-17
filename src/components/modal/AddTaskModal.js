@@ -5,18 +5,7 @@ export default function AddTaskModal(props) {
   const [name, setName] = React.useState("");
   const [description, setDescription] = React.useState("");
   return (
-    <div
-      style={{
-        zIndex: 100,
-        backgroundColor: "white",
-        width: "100%",
-        height: "100%",
-        left: 0,
-        reight: 0,
-        position: "absolute",
-      }}
-      className="modal-container"
-    >
+    <div className="modal-container">
       <h1>Add Task</h1>
       <div>
         <label>
