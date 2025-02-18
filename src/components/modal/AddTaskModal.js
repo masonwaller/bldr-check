@@ -17,12 +17,13 @@ export default function AddTaskModal(props) {
           />
         </label>
         <br />
-        <label>
+        <label className="description-box">
           Description:
-          <input
+          <textarea
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            rows={5}
           />
         </label>
         <br />
