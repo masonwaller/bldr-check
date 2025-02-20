@@ -12,3 +12,7 @@
 .description-box {
   display: flex;
 }
+
+input {
+  margin-bottom: 5px;
+}
