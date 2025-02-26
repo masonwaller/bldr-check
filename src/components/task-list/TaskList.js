@@ -11,9 +11,9 @@ export default function TaskList() {
   const [showModal, setShowModal] = useState(false);
 
   const websocket = new WebSocket("ws://localhost:8080");
-  websocket.onopen = () => {
-    console.log("WebSocket Client Connected");
-  };
+  //   websocket.onopen = () => {
+  //     console.log("WebSocket Client Connected");
+  //   };
   websocket.onmessage = async ({ data }) => {
     setTasks(await blobToArray(data));
   };
