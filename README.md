@@ -1,3 +1,5 @@
+##Task Manager with Web Socket
+
 Simple task manager list. This allows you to add tasks to a list as well as delete and complete them, hopefully help users stay
 organized. It uses websockets to keep lists the same on different browser windows.
 
