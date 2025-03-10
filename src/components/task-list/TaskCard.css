@@ -3,7 +3,14 @@
   border: 2px solid black;
   border-radius: 5px;
   width: 200px;
+  height: 200px;
   padding: 10px;
   background-color: lightgray;
   margin: 0 5px 5px 0;
+}
+
+.task-description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 80px;
 }
