@@ -11,6 +11,11 @@
 
 .task-description {
   text-overflow: ellipsis;
+  white-space: pre-line;
   overflow: hidden;
   height: 80px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
