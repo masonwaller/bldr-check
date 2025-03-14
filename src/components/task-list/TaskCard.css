@@ -15,6 +15,7 @@
   overflow: hidden;
   height: 80px;
 
+  /* this is for the ellipsis to work */
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
